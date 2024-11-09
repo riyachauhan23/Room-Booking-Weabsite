@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Room Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="registration.html" class="btn">Login/Signup</a></li>
+                <li><button id="mode-toggle">Switch to Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Find Your Perfect Room</h2>
+        <!-- <button onclick="openBooking()">Book Now</button> -->
+    </section>
+
+    <section id="rooms">
+            <h2 class="animate-fade">Available Rooms</h2>
+            <div class="room-container">
+        
+            <div class="room-card">
+                <img src="luxury1.jpg" alt="Regular Room 1">
+                <h3>Family Room 1</h3>
+                <p>Price: ₹ 1,200</p>
+                <p>Description: A cozy room with essential amenities for a comfortable stay.</p>
+                <button onclick="bookRoom('Regular Room 1', 1200)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury2.jpg" alt="Regular Room 2">
+                <h3>Family  Room 2</h3>
+                <p>Price: ₹ 1,300</p>
+                <p>Description: Spacious room with modern furnishings and a lovely view.</p>
+                <button onclick="bookRoom('Regular Room 2', 1100)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury3.jpg" alt="Regular Room 3">
+                <h3>Family Room 3</h3>
+                <p>Price: ₹ 1,000</p>
+                <p>Description: Comfortable stay with a queen-size bed and attached bathroom.</p>
+                <button onclick="bookRoom('Regular Room 3', 1000)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury9.jpg" alt="Regular Room 4">
+                <h3>Family Room 4</h3>
+                <p>Price: ₹ 1,500</p>
+                <p>Description: Ideal for solo travelers with all necessary amenities.</p>
+                <button onclick="bookRoom('Regular Room 4', 1500)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury5.webp" alt="Regular Room 5">
+                <h3>AC Room 5</h3>
+                <p>Price: ₹ 2,000</p>
+                <p>Description: A bright room with comfortable bedding and air conditioning.</p>
+                <button onclick="bookRoom('Regular Room 5', 2000)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury6.jpg" alt="Regular Room 6">
+                <h3>AC Room 6</h3>
+                <p>Price: ₹ 2,000</p>
+                <p>Description: A modern room with Wi-Fi access and flat-screen TV.</p>
+                <button onclick="bookRoom('Regular Room 6', 1050)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury7.jpg" alt="Regular Room 7">
+                <h3>Regular Room 7</h3>
+                <p>Price: ₹ 1,000</p>
+                <p>Description: Spacious room with a desk and ample storage space.</p>
+                <button onclick="bookRoom('Regular Room 7', 1000)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="luxury8.jpg" alt="Regular Room 8">
+                <h3>Regular Room 8</h3>
+                <p>Price: ₹ 1,000</p>
+                <p>Description: Luxurious room with premium amenities and great ambiance.</p>
+                <button onclick="bookRoom('Regular Room 8', 1000)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="vip2.avif" alt="VIP Room 1">
+                <h3>VIP Room 1</h3>
+                <p>Price: ₹ 2,100</p>
+                <p>Description: An exclusive room with a king-size bed, lounge area, and complimentary services.</p>
+                <button onclick="bookRoom('VIP Room 1', 250)">Book Now</button>
+            </div>
+
+            <div class="room-card">
+                <img src="vip3.jpg" alt="VIP Room 2">
+                <h3>VIP Room 2</h3>
+                <p>Price: ₹ 2,350</p>
+                <p>Description: Luxurious suite with private balcony, minibar, and dedicated room service.</p>
+                <button onclick="bookRoom('VIP Room 2', 300)">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Room Booking Website. All rights reserved.</p>
+    </footer>
+
+    <div id="loyalty-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoyalty()">&times;</span>
+            <h2>Loyalty Points</h2>
+            <p>You have 50 loyalty points. Use them for discounts on your next booking!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

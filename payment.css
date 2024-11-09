@@ -1,0 +1,125 @@
+/* General Page Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('room6.gif') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(225, 203, 203, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    color: #0a013b;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+#user-info {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #0a0808;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #0284c7;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #02699f;
+}
+
+/* Card visual section */
+.card-info {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.card-front {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-number {
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.expiry-date {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); }
+    60% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 14px;
+    }
+}

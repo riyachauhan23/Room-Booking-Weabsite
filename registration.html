@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Registration</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <header>
+        <h2>Room Registration</h2>
+    </header>
+
+    <div class="container">
+        <p id="room-info"></p>
+        <form id="registration-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" placeholder="First Name" required><br>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" placeholder="Last Name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email Address" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Your Address" required><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="City" required><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" placeholder="State" required><br>
+
+            <label for="id">ID (if Govt Officer):</label>
+            <input type="text" id="id" placeholder="ID (Optional)"><br>
+
+            <label for="contact">Contact:</label>
+            <input type="tel" id="contact" placeholder="Phone Number" required><br>
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" required><br>
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" required><br>
+
+            <label for="roomtype">Room Type:</label>
+            <select id="roomtype" required>
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="govt">Govt Officer</option>
+                <option value="2-bedroom">2-Bedroom</option>
+                <option value="suite">Suite</option>
+            </select><br>
+
+            <button type="button" onclick="proceedToPayment()">Proceed to Payment</button>
+        </form>
+    </div>
+
+    <script>
+        // Get room details from URL query parameters
+        //const urlParams = new URLSearchParams(window.location.search);
+        const roomName = localStorage.getItem('roomName');
+        const price = localStorage.getItem('roomPrice');
+        //console.log(roomName,price);
+
+        // Display room details
+        // document.getElementById('room-info').innerText = `Booking for ${roomName} - $${price} per night`;
+
+        // Proceed to payment
+        function proceedToPayment() {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('contact').value;
+
+            if (firstName && lastName && email && address && phone) {
+                const userData = { firstName, lastName, email, address, phone, roomName, price };
+                localStorage.setItem('userData', JSON.stringify(userData));
+                window.location.href = 'payment.html';
+            } else {
+                alert("Please fill all required fields.");
+            }
+        }
+    </script>
+</body>
+</html>
